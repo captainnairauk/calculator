@@ -60,7 +60,7 @@ body{
     justify-content: space-evenly;
     gap: 10px;
 }
-.key-container .key{
+.key-container .key,.operator{
     width: 59px;
     height: 59px;
     border: 2px black solid;
