@@ -29,11 +29,11 @@ function operator(operator, a, b) {
 const buttons = document.querySelectorAll(".key");
 
 for (let button of buttons) {
-    button.addEventListener("click", function(e){
-        let numbers =e.target.textContent;
+    button.addEventListener("click", function (e) {
+        let numbers = e.target.textContent;
         para.textContent = numbers;
     });
-}//displays the innerText after pressing the buttons
+}//displays the innerText after pressing the buttons (0-9)
 
 const output = document.querySelector(".output");
 const para = document.createElement("p");
