@@ -21,16 +21,26 @@ body{
     box-sizing: border-box;
 }
 
-.output{
+.display{
     height: 100px;
     width: 270px;
-    padding: 15px;
     box-sizing: border-box;
     border: 2px black solid;
     margin:0px 15px 0px 15px;
     border-radius: 5px;
     background-color: lightyellow;
     text-align: end;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-display,.lower-display{
+    border: 1px red solid;
+    width: 100%;
+    height: 100%;
+    display: inline-flex;
+    justify-content: right;
+    align-items: center;
 }
 
 .delete-container{
@@ -60,7 +70,7 @@ body{
     justify-content: space-evenly;
     gap: 10px;
 }
-.key-container .key,.operator{
+.key-container .key,.operator,.dot{
     width: 59px;
     height: 59px;
     border: 2px black solid;
