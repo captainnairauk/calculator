@@ -30,35 +30,32 @@ const lowerDisplay = document.querySelector(".lower-display");
 const upperDisplay = document.querySelector(".upper-display");
 const numButtons = document.querySelectorAll(".key");
 const operators = document.querySelectorAll(".operator");
-const dot=document.querySelector(".dot");
+const dot = document.querySelector(".dot");
 
-function populateNum() {
-    let array = "";
-    for (let button of numButtons) {
-        button.addEventListener("click", function (e) {
-            let numbers = e.target.textContent;
-            lowerDisplay.textContent=lowerDisplay.textContent+numbers;
-            array=lowerDisplay.textContent;
-            // array=lowerDisplay.textContent;
-        });
-    };
-    return array;
+let array1 = [];
+let array2 = [];
+let x = "0";
+let y = "0";
+
+for (let button of numButtons) {
+    button.addEventListener("click", function (e) {
+        let numbers = e.target.textContent;
+        lowerDisplay.textContent = lowerDisplay.textContent + numbers;
+        array1.push(lowerDisplay.textContent);
+        x = array1[array1.length - 1];
+        console.log(x);
+    });
 };//displays the innerText of numericals(0-9)
 
-populateNum();
+for (let operator of operators) {
+    operator.addEventListener("click", function (e) {
+        let operator = e.target.textContent;
+        upperDisplay.textContent = lowerDisplay.textContent + operator;
+        lowerDisplay.textContent="";   
+    });
+};//displays the innerText of operators(+,-,etc.)
 
-function populateOp() {
-    for (let operator of operators) {
-        operator.addEventListener("click", function (e) {
-            let operator = e.target.textContent;
-            upperDisplay.textContent =lowerDisplay.textContent+ operator;
-            lowerDisplay.textContent="";
-        });
-    };
-    return upperDisplay.textContent;
-}; //displays the innerText of operators(+,-,etc.)
-
-populateOp();
+// populateOp();
 
 // let numbers = e.target.textContent;
 // para.textContent = para.textContent+numbers;
