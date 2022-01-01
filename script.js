@@ -1,17 +1,17 @@
 function add(a, b) {
-    return a + b;
+    return parseInt(a) + parseInt(b);
 }//adds two numbers
 
 function subtract(a, b) {
-    return a - b;
+    return parseInt(a) - parseInt(b);
 }//subtracts two numbers
 
 function multiply(a, b) {
-    return a * b;
+    return parseInt(a) * parseInt(b);
 }//multiplies two numbers
 
 function divide(a, b) {
-    return a / b;
+    return parseInt(a) / parseInt(b);
 }//divides two numbers
 
 function operate(a, operator, b) {
@@ -33,10 +33,8 @@ const numButtons = document.querySelectorAll(".key");
 const operators = document.querySelectorAll(".operator");
 const dot = document.querySelector(".dot");
 
-let array1 = ["0"];
-let array2 = ["0"];
-
-
+let array1 = [];
+let array2 = [];
 
 for (let button of numButtons) {
     button.addEventListener("click", function (e) {
@@ -56,12 +54,12 @@ for (let operator of operators) {
         let b = array1[array1.length - 1];
         let c = array2[array2.length - 2];
         let d = array2[array2.length - 1];
-        console.table(a);
-        if (operator === "=") {
+        console.table(array1);
+        console.table(array2);
+        if (d === "=") {
             upperDisplay.textContent = a + c + b + d;
             lowerDisplay.textContent = operate(a, c, b);
         }
-        // lowerDisplay.textContent="";
     });
 };//displays the innerText of operators(+,-,etc.)
 
