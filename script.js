@@ -49,6 +49,7 @@ for (let operator of operators) {
         array2.push(operator);
         upperDisplay.textContent = lowerDisplay.textContent + operator;
         array1.push(lowerDisplay.textContent);
+        array1.reduce()
         lowerDisplay.textContent = "";
         let a = array1[array1.length - 2];
         let b = array1[array1.length - 1];
