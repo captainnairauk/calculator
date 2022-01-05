@@ -43,12 +43,13 @@ for (let button of numButtons) {
     });
 };//displays the innerText of numericals(0-9)
 
+
 for (let operator of operators) {
     operator.addEventListener("click", function (e) {
         let operator = e.target.textContent;
         array2.push(operator);
-        upperDisplay.textContent = lowerDisplay.textContent + operator;
         array1.push(lowerDisplay.textContent);
+        upperDisplay.textContent = lowerDisplay.textContent + operator;
         lowerDisplay.textContent = "";
         let a = array1[array1.length - 2];
         let b = array1[array1.length - 1];
@@ -60,6 +61,19 @@ for (let operator of operators) {
             upperDisplay.textContent = a + c + b + d;
             lowerDisplay.textContent = operate(a, c, b);
         }
+        // } else if (d==="+"){
+        //     upperDisplay.textContent = a + c + b + d;
+        //     lowerDisplay.textContent = operate(a, c, b);
+        // } else if (d==="-"){
+        //     upperDisplay.textContent = a + c + b + d;
+        //     lowerDisplay.textContent = operate(a, c, b);
+        // } else if (d==="x"){
+        //     upperDisplay.textContent = a + c + b + d;
+        //     lowerDisplay.textContent = operate(a, c, b);
+        // } else {
+        //     upperDisplay.textContent = a + c + b + d;
+        //     lowerDisplay.textContent = operate(a, c, b);
+        // }
     });
 };//displays the innerText of operators(+,-,etc.)
 
