@@ -26,7 +26,7 @@ function operate(a, operator, b) {
     }
 }//calls operators (add, subtract, etc) on two numbers and returns the result
 
-// console.log(operate(78,"/",2));
+console.log(operate(88, "÷", 11));
 const lowerDisplay = document.querySelector(".lower-display");
 const upperDisplay = document.querySelector(".upper-display");
 const numButtons = document.querySelectorAll(".key");
@@ -41,43 +41,38 @@ for (let button of numButtons) {
     button.addEventListener("click", function (e) {
         let numbers = e.target.textContent;
         lowerDisplay.textContent = lowerDisplay.textContent + numbers;
-        array1.push(lowerDisplay.textContent);
-        console.table(array1);
     });
+    
 };//displays the innerText of numericals(0-9)
 
 for (let operator of operators) {
+
     operator.addEventListener("click", function (e) {
         let operator = e.target.textContent;
-        // array1.push(lowerDisplay.textContent);
+        array1.push(lowerDisplay.textContent);
         array2.push(operator);
-        upperDisplay.textContent = lowerDisplay.textContent + operator;
-        lowerDisplay.textContent = "";
-        console.table(array2);
+        upperDisplay.textContent=lowerDisplay.textContent+operator;
+        lowerDisplay.textContent="";
         let a = array1[array1.length - 2];
         let b = array1[array1.length - 1];
         let c = array2[array2.length - 2];
         let d = array2[array2.length - 1];
+        console.table(array1);
+        console.table(array2);
         if (d === "=") {
             upperDisplay.textContent = a + c + b + d;
-            lowerDisplay.textContent = "";
             lowerDisplay.textContent = operate(a, c, b);
-        }
-        // } else if (d==="+"){
-        //     upperDisplay.textContent = a + c + b + d;
-        //     lowerDisplay.textContent = operate(a, c, b);
-        // } else if (d==="-"){
-        //     upperDisplay.textContent = a + c + b + d;
-        //     lowerDisplay.textContent = operate(a, c, b);
-        // } else if (d==="x"){
-        //     upperDisplay.textContent = a + c + b + d;
-        //     lowerDisplay.textContent = operate(a, c, b);
-        // } else {
-        //     upperDisplay.textContent = a + c + b + d;
-        //     lowerDisplay.textContent = operate(a, c, b);
+        } 
+        // else if (d==="+"){
+        //     upperDisplay.textContent=operate(a,c,b)+d;
+        //     // lowerDisplay.textContent="";
+        //     // array1.push(operate(a,c,b));
         // }
     });
+
+
 };//displays the innerText of operators(+,-,etc.)
+ 
 
 
 
