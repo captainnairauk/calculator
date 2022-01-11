@@ -26,7 +26,7 @@ function operate(a, operator, b) {
     }
 }//calls operators (add, subtract, etc) on two numbers and returns the result
 
-console.log(operate(88, "÷", 11));
+console.log(typeof (operate(88, "÷", 11)).toString);
 const lowerDisplay = document.querySelector(".lower-display");
 const upperDisplay = document.querySelector(".upper-display");
 const numButtons = document.querySelectorAll(".key");
@@ -51,23 +51,40 @@ for (let operator of operators) {
         let operator = e.target.textContent;
         array1.push(lowerDisplay.textContent);
         array2.push(operator);
-        upperDisplay.textContent=lowerDisplay.textContent+operator;
-        lowerDisplay.textContent="";
         let a = array1[array1.length - 2];
         let b = array1[array1.length - 1];
         let c = array2[array2.length - 2];
         let d = array2[array2.length - 1];
+        upperDisplay.textContent=lowerDisplay.textContent+operator;
+        lowerDisplay.textContent="";
         console.table(array1);
         console.table(array2);
+        console.log(a);
+        console.log(b);
         if (d === "=") {
             upperDisplay.textContent = a + c + b + d;
             lowerDisplay.textContent = operate(a, c, b);
         } 
-        // else if (d==="+"){
-        //     upperDisplay.textContent=operate(a,c,b)+d;
-        //     // lowerDisplay.textContent="";
-        //     // array1.push(operate(a,c,b));
-        // }
+        else if (c==="+"){
+            upperDisplay.textContent=operate(a,c,b)+d;
+            lowerDisplay.textContent="";
+            // array1.push(operate(a,c,b));
+        }
+        else if (c==="-"){
+            upperDisplay.textContent=operate(a,c,b)+d;
+            lowerDisplay.textContent="";
+            // array1.push(operate(a,c,b));
+        }
+        else if (c==="x"){
+            upperDisplay.textContent=operate(a,c,b)+d;
+            lowerDisplay.textContent="";
+            // array1.push(operate(a,c,b));
+        }
+        else if (c==="÷"){
+            upperDisplay.textContent=operate(a,c,b)+d;
+            lowerDisplay.textContent="";
+            // array1.push(operate(a,c,b));
+        }
     });
 
 
