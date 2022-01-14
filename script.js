@@ -42,7 +42,7 @@ for (let button of numButtons) {
         let numbers = e.target.textContent;
         lowerDisplay.textContent = lowerDisplay.textContent + numbers;
     });
-    
+
 };//displays the innerText of numericals(0-9)
 
 for (let operator of operators) {
@@ -55,8 +55,8 @@ for (let operator of operators) {
         let b = array1[array1.length - 1];
         let c = array2[array2.length - 2];
         let d = array2[array2.length - 1];
-        upperDisplay.textContent=lowerDisplay.textContent+operator;
-        lowerDisplay.textContent="";
+        upperDisplay.textContent = lowerDisplay.textContent + operator;
+        lowerDisplay.textContent = "";
         console.table(array1);
         console.table(array2);
         console.log(a);
@@ -64,32 +64,33 @@ for (let operator of operators) {
         if (d === "=") {
             upperDisplay.textContent = a + c + b + d;
             lowerDisplay.textContent = operate(a, c, b);
-        } 
-        else if (c==="+"){
-            upperDisplay.textContent=operate(a,c,b)+d;
-            lowerDisplay.textContent="";
-            // array1.push(operate(a,c,b));
         }
-        else if (c==="-"){
-            upperDisplay.textContent=operate(a,c,b)+d;
-            lowerDisplay.textContent="";
-            // array1.push(operate(a,c,b));
+        else if (c === "+") {
+            upperDisplay.textContent = operate(a, c, b) + d;
+            lowerDisplay.textContent = "";
+            array1.push(operate(a,c,b));
         }
-        else if (c==="x"){
-            upperDisplay.textContent=operate(a,c,b)+d;
-            lowerDisplay.textContent="";
-            // array1.push(operate(a,c,b));
+        else if (c === "-") {
+            upperDisplay.textContent = operate(a, c, b) + d;
+            lowerDisplay.textContent = "";
+            array1.push(operate(a,c,b));
         }
-        else if (c==="÷"){
-            upperDisplay.textContent=operate(a,c,b)+d;
-            lowerDisplay.textContent="";
-            // array1.push(operate(a,c,b));
+        else if (c === "x") {
+            upperDisplay.textContent = operate(a, c, b) + d;
+            lowerDisplay.textContent = "";
+            array1.push(operate(a,c,b));
+        }
+        else if (c === "÷") {
+            upperDisplay.textContent = operate(a, c, b) + d;
+            lowerDisplay.textContent = "";
+            array1.push(operate(a,c,b));
         }
     });
 
 
 };//displays the innerText of operators(+,-,etc.)
- 
+
+
 
 
 
