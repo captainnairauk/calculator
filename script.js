@@ -1,37 +1,40 @@
 function add(a, b) {
-    return parseInt(a) + parseInt(b);
+    let answer= parseFloat(a) + parseFloat(b);
+    return answer;
 }//adds two numbers
 
 function subtract(a, b) {
-    return parseInt(a) - parseInt(b);
+    let answer=parseFloat(a) - parseFloat(b);
+    return answer;
 }//subtracts two numbers
 
 function multiply(a, b) {
-    return parseInt(a) * parseInt(b);
+    let answer=parseFloat(a) * parseFloat(b);
+    return answer;
 }//multiplies two numbers
 
 function divide(a, b) {
-    return parseInt(a) / parseInt(b);
+    let answer=parseFloat(a) / parseFloat(b);
+    return answer;
 }//divides two numbers
 
 function operate(a, operator, b) {
     if (operator === "+") {
-        return add(a, b);
+        return add(a, b).toFixed(2);
     } else if (operator === "-") {
-        return subtract(a, b);
+        return subtract(a, b).toFixed(2);
     } else if (operator === "x") {
-        return multiply(a, b);
+        return multiply(a, b).toFixed(2);
     } else {
-        return divide(a, b);
+        return divide(a, b).toFixed(2);
     }
 }//calls operators (add, subtract, etc) on two numbers and returns the result
 
-console.log(typeof (operate(88, "÷", 11)).toString);
+console.log( (operate(8.02, "+", 0.5)));
 const lowerDisplay = document.querySelector(".lower-display");
 const upperDisplay = document.querySelector(".upper-display");
 const numButtons = document.querySelectorAll(".key");
 const operators = document.querySelectorAll(".operator");
-const dot = document.querySelector(".dot");
 const allClear= document.querySelector("#AC");
 const undo=document.querySelector("#undo");
 
@@ -96,11 +99,14 @@ for (let operator of operators) {
 allClear.addEventListener("click",function(){
     lowerDisplay.textContent="";
     upperDisplay.textContent="";
-});
+    location.reload();
+}); //wipes out existing data.
 
 
-
-
+undo.addEventListener("click",function(){
+    lowerDisplay.textContent= lowerDisplay.textContent.substring(0,lowerDisplay.textContent.length-1);
+    lowerDisplay.textContent;
+}); //this is backspace button, user can undo if they click the wrong number.
 
 
 

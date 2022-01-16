@@ -71,7 +71,7 @@ body{
     justify-content: space-evenly;
     gap: 10px;
 }
-.key-container .key,.operator,.dot, #equal-to{
+.key-container .key,.operator, #equal-to{
     width: 59px;
     height: 59px;
     border: 2px black solid;
