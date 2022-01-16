@@ -40,19 +40,18 @@ const undo = document.querySelector("#undo");
 let array1 = [];
 let array2 = [];
 
-
 for (let button of numButtons) {
+    lowerDisplay.textContent="0";
     button.addEventListener("click", function (e) {
         let numbers = e.target.textContent;
         lowerDisplay.textContent = lowerDisplay.textContent + numbers;
-        if (lowerDisplay.textContent.includes(".")){
-            document.getElementById("decimal").disabled =true;
+        if (lowerDisplay.textContent.includes(".")) {
+            document.getElementById("decimal").disabled = true;
         }
     });
 };//displays the innerText of numericals(0-9) & decimal point
 
 for (let operator of operators) {
-
     operator.addEventListener("click", function (e) {
         let operator = e.target.textContent;
         array1.push(lowerDisplay.textContent);
@@ -61,7 +60,7 @@ for (let operator of operators) {
         let b = array1[array1.length - 1];
         let c = array2[array2.length - 2];
         let d = array2[array2.length - 1];
-        document.getElementById("decimal").disabled =false;
+        document.getElementById("decimal").disabled = false;
         upperDisplay.textContent = lowerDisplay.textContent + operator;
         lowerDisplay.textContent = "";
         console.table(array1);
@@ -71,6 +70,7 @@ for (let operator of operators) {
         if (d === "=") {
             upperDisplay.textContent = a + c + b + d;
             lowerDisplay.textContent = operate(a, c, b);
+            document.getElementById("decimal").disabled = true;
         }
         else if (c === "+") {
             upperDisplay.textContent = operate(a, c, b) + d;
@@ -94,9 +94,7 @@ for (let operator of operators) {
         }
     });
 
-
 };//displays the innerText of operators(+,-,etc.)
-
 
 allClear.addEventListener("click", function () {
     lowerDisplay.textContent = "";
@@ -109,7 +107,3 @@ undo.addEventListener("click", function () {
     lowerDisplay.textContent = lowerDisplay.textContent.substring(0, lowerDisplay.textContent.length - 1);
     lowerDisplay.textContent;
 }); //this is backspace button, user can undo if they click the wrong number.
-
-
-
-
