@@ -32,6 +32,8 @@ const upperDisplay = document.querySelector(".upper-display");
 const numButtons = document.querySelectorAll(".key");
 const operators = document.querySelectorAll(".operator");
 const dot = document.querySelector(".dot");
+const allClear= document.querySelector("#AC");
+const undo=document.querySelector("#undo");
 
 let array1 = [];
 let array2 = [];
@@ -68,22 +70,22 @@ for (let operator of operators) {
         else if (c === "+") {
             upperDisplay.textContent = operate(a, c, b) + d;
             lowerDisplay.textContent = "";
-            array1.push(operate(a,c,b));
+            array1.push(operate(a, c, b));
         }
         else if (c === "-") {
             upperDisplay.textContent = operate(a, c, b) + d;
             lowerDisplay.textContent = "";
-            array1.push(operate(a,c,b));
+            array1.push(operate(a, c, b));
         }
         else if (c === "x") {
             upperDisplay.textContent = operate(a, c, b) + d;
             lowerDisplay.textContent = "";
-            array1.push(operate(a,c,b));
+            array1.push(operate(a, c, b));
         }
         else if (c === "÷") {
             upperDisplay.textContent = operate(a, c, b) + d;
             lowerDisplay.textContent = "";
-            array1.push(operate(a,c,b));
+            array1.push(operate(a, c, b));
         }
     });
 
@@ -91,7 +93,10 @@ for (let operator of operators) {
 };//displays the innerText of operators(+,-,etc.)
 
 
-
+allClear.addEventListener("click",function(){
+    lowerDisplay.textContent="";
+    upperDisplay.textContent="";
+});
 
 
 
