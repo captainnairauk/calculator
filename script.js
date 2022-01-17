@@ -41,7 +41,7 @@ let array1 = [];
 let array2 = [];
 
 for (let button of numButtons) {
-    lowerDisplay.textContent="0";
+    lowerDisplay.textContent = "0";
     button.addEventListener("click", function (e) {
         let numbers = e.target.textContent;
         lowerDisplay.textContent = lowerDisplay.textContent + numbers;
